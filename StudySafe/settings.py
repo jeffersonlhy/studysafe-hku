@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-(o@^*u7n4(jx!jnt37%ib(1md%ple(aj!0sm&+5^j7xi8*-a^7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ancient-lake-43959.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['group-project-comp3297.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'core',
+    'traces'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'StudySafe.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +69,6 @@ TEMPLATES = [
             ],
         },
     },
-    
 ]
 
 WSGI_APPLICATION = 'StudySafe.wsgi.application'
@@ -76,35 +77,25 @@ WSGI_APPLICATION = 'StudySafe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'db576gbihm0h30',
-#         'USER': 'gstczbwqrxcjcj',
-#         'PASSWORD': '8f2af859c1b5230069da799ba59fcd147bb3ebe64b6a108a0e72fcf07b1f5245',
-#         'HOST': 'ec2-54-157-79-121.compute-1.amazonaws.com',
-#         'PORT':  5432
-#     }
-#     # 'default': {
-#     #     'ENGINE': 'django.db.backends.postgresql',
-#     #     'NAME': 'studysafe',
-#     #     'USER': 'developer1',
-#     #     'PASSWORD': 'p@ssw0rd',
-#     #     'HOST': 'localhost',
-#     #     'PORT':  5432
-#     # }
-# }
-
-DATABASES = { 
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'd76i08m6l4fcqj',
+    #     'USER': 'bykiernkgakndx',
+    #     'PASSWORD': '699792582d6f27a9329bc76448d4af78b0015bd4ea8323eee392cad923d76f12',
+    #     'HOST': 'ec2-52-4-104-184.compute-1.amazonaws.com',
+    #     'PORT':  5432
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'studysafe',
         'USER': 'developer2',
         'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT':  5432
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

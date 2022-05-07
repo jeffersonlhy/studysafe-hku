@@ -11,6 +11,7 @@ uritemplate = "*"
 gunicorn = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+environs = {extras = ["django"], version = "*"}
 
 [dev-packages]
 

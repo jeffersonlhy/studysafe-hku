@@ -12,6 +12,7 @@ gunicorn = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 environs = {extras = ["django"], version = "*"}
+whitenoise = "*"
 
 [dev-packages]
 

@@ -85,8 +85,10 @@ def get_close_contacts(request):
         result.remove(hku_id)
     
     result = list(result)
-    result.sort()
-    return Response(result)
+    result_int = [int(r) for r in result]
+    result_int.sort()
+    result_str = [str(r) for r in result]
+    return Response(result_str)
 
 class VenueViewSet(viewsets.ModelViewSet):
     # lookup_field='venue_code'

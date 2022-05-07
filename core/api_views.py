@@ -87,7 +87,7 @@ def get_close_contacts(request):
     result = list(result)
     result_int = [int(r) for r in result]
     result_int.sort()
-    result_str = [str(r) for r in result]
+    result_str = [str(r) for r in result_int]
     return Response(result_str)
 
 class VenueViewSet(viewsets.ModelViewSet):

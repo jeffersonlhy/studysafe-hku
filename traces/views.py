@@ -8,7 +8,7 @@ def venue_view(request):
     diagoseDateString = request.GET.get('diagnose_date', None)
     print(hku_id)
     print(diagoseDateString)
-    with urllib.request.urlopen('http://localhost:8000/core/api/venues_visited?hku_id='+hku_id+"&diagnose_date="+diagoseDateString) as response:
+    with urllib.request.urlopen('https://ancient-lake-43959.herokuapp.com/core/api/venues_visited?hku_id='+hku_id+"&diagnose_date="+diagoseDateString) as response:
         r = response.read()
         code=response.getcode()
     r=r.decode('utf-8')
@@ -27,7 +27,7 @@ def contact_view(request):
     diagoseDateString = request.GET.get('diagnose_date', None)
     print(hku_id)
     print(diagoseDateString)
-    with urllib.request.urlopen('http://localhost:8000/core/api/close_contacts?hku_id='+hku_id+"&diagnose_date="+diagoseDateString) as response:
+    with urllib.request.urlopen('https://ancient-lake-43959.herokuapp.com/core/api/close_contacts?hku_id='+hku_id+"&diagnose_date="+diagoseDateString) as response:
         r = response.read()
         code=response.getcode()
     r=r.decode('utf-8')

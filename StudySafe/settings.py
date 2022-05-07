@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(o@^*u7n4(jx!jnt37%ib(1md%ple(aj!0sm&+5^j7xi8*-a^7'
+SECRET_KEY = env.str('QDD_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,14 +81,6 @@ WSGI_APPLICATION = 'StudySafe.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'd76i08m6l4fcqj',
-    #     'USER': 'bykiernkgakndx',
-    #     'PASSWORD': '699792582d6f27a9329bc76448d4af78b0015bd4ea8323eee392cad923d76f12',
-    #     'HOST': 'ec2-52-4-104-184.compute-1.amazonaws.com',
-    #     'PORT':  5432
-    # }
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': 'studysafe',

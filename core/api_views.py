@@ -71,7 +71,7 @@ def get_close_contacts(request):
             enter_events = records.filter(member__hku_id=id, event='Entry')
             exit_events =  records.filter(member__hku_id=id, event='Exit')
             # To ensure the entry records match the exit record (we may assume the entry and exit always appear in pair)
-            print("length check: ", len(enter_events), len(exit_events), 'Length Match:', len(enter_events)==len(exit_events)) 
+            print(f"id :{id} venue: {venue} date: {date_min} length check: ", len(enter_events), len(exit_events), 'Length Match:', len(enter_events)==len(exit_events)) 
             for i in range(min(len(enter_events), len(exit_events))): # to avoid index out of range
                 duration = exit_events[i].dateTime - enter_events[i].dateTime # Check each pair of entry, leave event
                 print(f"{id}: {duration}")

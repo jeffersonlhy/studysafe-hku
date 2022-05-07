@@ -32,6 +32,7 @@ def get_venues_visited(request):
     visit_records_in_range = visit_records_user.filter(dateTime__gte=datetime.combine(infectuous_date, time.min), dateTime__lte=datetime.combine(diagnoseDate, time.max))
     print(visit_records_in_range)
     venues = list(set([v.venue.venue_code for v in visit_records_in_range])) # find unique venue code (set operation)
+    venues.sort()
     return Response(venues)
 
 #this function should get the close contacts as defined by hku
@@ -82,8 +83,10 @@ def get_close_contacts(request):
     if hku_id in result:
         print("remove the infectious member himself")
         result.remove(hku_id)
-
-    return Response(list(result))
+    
+    result = list(result)
+    result.sort()
+    return Response(result)
 
 class VenueViewSet(viewsets.ModelViewSet):
     # lookup_field='venue_code'

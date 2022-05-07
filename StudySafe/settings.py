@@ -86,12 +86,20 @@ DATABASES = {
     #     'HOST': 'ec2-52-4-104-184.compute-1.amazonaws.com',
     #     'PORT':  5432
     # }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'studysafe',
+    #     'USER': 'developer2',
+    #     'PASSWORD': 'password',
+    #     'HOST': 'localhost',
+    #     'PORT':  5432
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'studysafe',
-        'USER': 'developer2',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'df129djqhqvlak',
+        'USER': 'zvhxfroksureaj',
+        'PASSWORD': 'd240bcad731d8e0c203f86e7becb6d5f755d4576987add5e336f8a90a62ea0b9',
+        'HOST': 'ec2-35-168-194-15.compute-1.amazonaws.com',
         'PORT':  5432
     }
 }
